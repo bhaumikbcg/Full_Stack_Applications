@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    image: bhaumikbcg/chat_backend:lts
+    ports:
+      - "8080:8080"
+
+  backend2:
+    image: bhaumikbcg/chat_backend2:lts
+    ports:
+      - "8084:8080"
+
+  auth-backend:
+    image: bhaumikbcg/chat_auth-backend:lts
+    ports:
+      - "8081:8081"
+
+  frontend:
+    image: bhaumikbcg/chat_frontend:lts
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  frontend2:
+    image: bhaumikbcg/chat_frontend2:lts
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend

@@ -1,0 +1,2 @@
+node_modules
+//we dont want this to go to docker container
